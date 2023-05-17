@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         loadData()
 
 
+        // deafult and usely listView with adapter
         val adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list)
         binding.listView.adapter = adapter
         binding.listView.setOnItemClickListener { parent, view, position, id ->
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    // custom listView
     fun firstSee(){
         for (s in list) {
             val inflater = layoutInflater.inflate(R.layout.item_list_view,null,false)
