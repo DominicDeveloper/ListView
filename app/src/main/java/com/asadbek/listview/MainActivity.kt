@@ -5,7 +5,6 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.asadbek.listview.adapters.UserAdapter
 import com.asadbek.listview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         list = ArrayList()
         loadData()
+
 
         val adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list)
         binding.listView.adapter = adapter
@@ -39,10 +39,5 @@ class MainActivity : AppCompatActivity() {
         for (i in 0..100){
             list.add("Android Developing $i")
         }
-    }
-    // custom adapter
-    fun customAdapter(){
-        val adapter = UserAdapter(this,list)
-        binding.listView.adapter = adapter
     }
 }
